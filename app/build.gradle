@@ -1,0 +1,34 @@
+apply plugin: 'com.android.application'
+
+android {
+	namespace "com.template"
+	
+	compileSdkVersion 34
+	buildToolsVersion "34.0.0"
+
+	defaultConfig {
+		applicationId "com.template"
+		minSdkVersion 16
+		targetSdkVersion 30
+		versionCode 1
+		versionName "1.0"
+	}
+	buildTypes {
+		release {
+			minifyEnabled true
+			shrinkResources true
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
+	}
+}
+
+dependencies {
+	def appcompat_version = "1.6.1"
+
+	implementation "androidx.appcompat:appcompat:$appcompat_version"
+	// For loading and tinting drawables on older versions of the platform
+	implementation "androidx.appcompat:appcompat-resources:$appcompat_version"
+	
+	// import local libs
+	implementation fileTree(dir: 'libs', include: ['*.jar'])
+}

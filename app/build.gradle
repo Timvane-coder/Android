@@ -8,8 +8,8 @@ android {
 
 	defaultConfig {
 		applicationId "com.template"
-		minSdkVersion 16
-		targetSdkVersion 30
+		minSdkVersion 26
+		targetSdkVersion 33
 		versionCode 1
 		versionName "1.0"
 	}
